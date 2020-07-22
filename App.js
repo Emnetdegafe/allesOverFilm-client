@@ -1,21 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
+import BarcodeScanner from "./screens/BarcodeScanner";
+import Logo from "./components/logo";
+import Scanner from "./components/scanner"
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Here comes a new App</Text>
-      <StatusBar style="auto" />
+    <View
+      style={{
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        alignItems: "stretch",
+      }}
+    >
+      <Logo />
+      <Scanner/>
+      {/* <BarcodeScanner /> */}
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
