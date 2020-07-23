@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { View, Text, Button, StyleSheet, TouchableOpacity } from "react-native";
 import * as Permissions from "expo-permissions";
 import { BarCodeScanner } from "expo-barcode-scanner";
-import Scanner from "../components/Barcode-icon";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-export default function BarcodeReader() {
+export default function BarcodeScannerScreen() {
   // const [state, set_state] = useState(" ")
 
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
-  const [code, set_code] = useState("");
+  // const [code, set_code] = useState("");
 
   useEffect(() => {
     (async () => {
@@ -21,7 +21,7 @@ export default function BarcodeReader() {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-    set_code(data);
+    // set_code(data);
   };
 
   if (hasPermission === null) {
@@ -35,19 +35,25 @@ export default function BarcodeReader() {
     container: {
       flex: 1,
       flexDirection: "column",
-      justifyContent: "flex-end",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    icon: {
+      padding: 50,
+      // width: 50
     },
   });
 
   return (
     <View style={styles.container}>
+      {/* <Text> Scan barcode here</Text>
+      <Icon name="barcode-scan" size={60} style={styles.icon} /> */}
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
       />
       {scanned && (
         <Button title={"Tap to Scan Again"} onPress={() => setScanned(false)} />
       )}
-      {/* <Scanner barcodescanner={BarCodeScanner}/> */}
     </View>
   );
 }

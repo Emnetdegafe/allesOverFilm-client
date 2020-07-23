@@ -4,15 +4,18 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 80,
+    paddingTop: 30,
     paddingRight: 50,
-    backgroundColor: "#fff",
+    // backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
   logo: {
-    width: 66,
-    height: 58,
+    paddingTop: 30,
+    paddingRight: 50,
+    padding: 40,
+    width: 70,
+    height: 50,
   },
 });
 
