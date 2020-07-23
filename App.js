@@ -1,16 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { NavigationContainer } from "@react-navigation/native"
-import { createStackNavigator} from "@react-navigation/stack"
-import BarcodeScannerScreen from "./screens/BarcodeScannerScreen"
-import HomeScreen from "./screens/HomeScreen"
-
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import BarcodeScannerScreen from "./screens/BarcodeScannerScreen";
+import HomeScreen from "./screens/HomeScreen";
 
 const Stack = createStackNavigator();
 
 export default function App() {
-
   return (
     <NavigationContainer>
       <Stack.Navigator>

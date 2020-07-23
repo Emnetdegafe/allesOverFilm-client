@@ -16,6 +16,9 @@ export default function HomeScreen() {
     header: {
       paddingTop: 10,
     },
+    input: {
+        paddingTop: 5
+    }
   });
   return (
     <View style={styles.container}>
@@ -25,6 +28,9 @@ export default function HomeScreen() {
       </View>
       <View style={styles.header}>
         <Header />
+        <View>
+            <Search/>
+        </View>
       </View>
     </View>
   );
