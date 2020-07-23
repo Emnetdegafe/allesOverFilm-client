@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Pressable,
 } from "react-native";
-// import Icon  from "react-native-vector-icons/dist/MaterialCommunityIcons";
+import Icon  from "react-native-vector-icons/MaterialCommunityIcons";
 
 const styles = StyleSheet.create({
   container: {
@@ -30,7 +30,7 @@ export default function Scanner() {
       {/* <Pressable 
       // onPress={() => {}}
       > */}
-      {/* <Icon name="barcode-scan" size={50} /> */}
+      <Icon name="barcode-scan" size={50} />
       <StatusBar style="auto" />
       {/* </Pressable> */}
     </View>

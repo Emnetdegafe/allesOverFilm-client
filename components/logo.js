@@ -20,7 +20,6 @@ export default function Logo() {
   return (
     <View style={styles.container}>
       <Image style={styles.logo} source={require("../images/logo.png")} />
-      <StatusBar style="auto" />
     </View>
   );
 }
