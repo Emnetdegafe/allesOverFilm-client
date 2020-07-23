@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   Pressable,
 } from "react-native";
-import Icon  from "react-native-vector-icons/MaterialCommunityIcons";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import BarcodeReader from "../screens/BarcodeScanner";
 
 const styles = StyleSheet.create({
   container: {
@@ -25,14 +26,12 @@ const styles = StyleSheet.create({
 });
 
 export default function Scanner() {
+  console.log("barcodescanner", barcodescanner);
   return (
-    <View style={styles.container}>
-      {/* <Pressable 
-      // onPress={() => {}}
-      > */}
-      <Icon name="barcode-scan" size={50} />
-      <StatusBar style="auto" />
-      {/* </Pressable> */}
-    </View>
+    <TouchableOpacity>
+      <View style={styles.container}>
+        <Icon name="barcode-scan" size={50} onPress={() => BarcodeReader} />
+      </View>
+    </TouchableOpacity>
   );
 }

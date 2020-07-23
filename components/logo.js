@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -18,8 +18,10 @@ const styles = StyleSheet.create({
 
 export default function Logo() {
   return (
+    <TouchableOpacity activeOpacity="0.2">
     <View style={styles.container}>
       <Image style={styles.logo} source={require("../images/logo.png")} />
     </View>
+    </TouchableOpacity>
   );
 }
