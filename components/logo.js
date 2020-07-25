@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
 export default function Logo() {
   return (
-    <TouchableOpacity activeOpacity="0.2">
+    <TouchableOpacity activeOpacity={0.2} >
     <View style={styles.container}>
       <Image style={styles.logo} source={require("../images/logo.png")} />
     </View>

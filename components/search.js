@@ -36,18 +36,18 @@ export default function Search() {
   const [text, set_text] = useState("");
   const onChange = (textValue) => set_text(textValue);
   
-  const searchFilm = text => {
-    Axios.get("url")
-    .then((response) => {
-        alert(JSON.stringify(response.data));
-      })
-        .catch((error) => {
-          alert(error.message);
-        })
-        .finally(() => {
-          alert("text");
-        })
-  };
+  // const searchFilm = text => {
+  //   Axios.get("url")
+  //   .then((response) => {
+  //       alert(JSON.stringify(response.data));
+  //     })
+  //       .catch((error) => {
+  //         alert(error.message);
+  //       })
+  //       .finally(() => {
+  //         alert("text");
+  //       })
+  // };
   return (
     <TouchableOpacity>
       <View style={styles.container}>
@@ -57,7 +57,7 @@ export default function Search() {
           value={text}
           onChangeText={onChange}
         />
-        <Icon style={styles.icon} name="search" size={20} color="#000000" onPress={searchFilm()}/>
+        {/* <Icon style={styles.icon} name="search" size={20} color="#000000" onPress={searchFilm()}/> */}
       </View>
     </TouchableOpacity>
   );

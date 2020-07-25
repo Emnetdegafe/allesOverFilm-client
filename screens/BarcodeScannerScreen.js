@@ -36,7 +36,7 @@ export default function BarcodeScannerScreen() {
       flex: 1,
       flexDirection: "column",
       justifyContent: "center",
-      alignItems: "center",
+      // alignItems: "center",
     },
     icon: {
       padding: 50,
@@ -46,8 +46,7 @@ export default function BarcodeScannerScreen() {
 
   return (
     <View style={styles.container}>
-      {/* <Text> Scan barcode here</Text>
-      <Icon name="barcode-scan" size={60} style={styles.icon} /> */}
+
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
       />
