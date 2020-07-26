@@ -17,10 +17,10 @@ export default function HomeScreen() {
       <View style={styles.header}>
         <Header />
         <View>
-          <Search />
+          {/* <Search /> */}
         </View>
         <View>
-        <Reviews />
+        {/* <Reviews /> */}
         </View>
       </View>
     </View>
