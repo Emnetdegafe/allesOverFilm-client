@@ -20,7 +20,7 @@ export default function HomeScreen() {
           {/* <Search /> */}
         </View>
         <View>
-        {/* <Reviews /> */}
+        <Reviews />
         </View>
       </View>
     </View>
