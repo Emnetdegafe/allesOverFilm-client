@@ -6,27 +6,30 @@ import {
   ActivityIndicator,
   FlatList,
   Text,
+  View,
 } from "react-native";
 import Axios from "axios";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-const baseUrl = "http://localhost:4000/films";
+const baseUrl = "http://192.168.1.49:4000/films";
 
 export default function Reviews() {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    Axios.get(baseUrl)
-      .then(function(response){
-        console.log('response', response.data)
-      } )
-      // .then((json) => setData(json: ))
-      .catch((error) => {
-        console.log(error);
+    try {
+      Axios.get(baseUrl).then((response) => {
+        setData(response.data.films);
+        setLoading(false);
       });
-            // console.log("response", response);
-
+      console.log("result", response.data.films);
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
+  // console.log(data);
+  // console.log("response", response);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -35,13 +38,15 @@ export default function Reviews() {
       ) : (
         <FlatList
           data={data}
-          keyExtractor={({ id }, index) => id}
-          renderItem={({ item }) => {
-          return (
-          <Text>{item.summary}</Text>
-          )
-          }}
-          />
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({ item }) => (
+            <TouchableOpacity style={styles.filmBox} >
+              <Text style={styles.filmText}>{item.title}</Text>
+              <Text>{item.year}</Text>
+              {/* <Image source={item.image} /> */}
+            </TouchableOpacity>
+          )}
+        />
       )}
     </SafeAreaView>
   );
@@ -50,6 +55,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    justifyContent: "flex-start",
+    justifyContent: "center",
+    marginTop: 48,
+    marginLeft: 20,
+  },
+  filmBox: {
+    paddingBottom: 5,
+    marginHorizontal: 40,
+    marginVertical: 30,
+    // borderStyle: "solid",
+    borderWidth: 1,
+    borderColor: "black",
+  },
+  filmText: {
+    fontSize: 20,
+    fontWeight: "200",
+  },
+  title: {
+    fontSize: 32,
   },
 });

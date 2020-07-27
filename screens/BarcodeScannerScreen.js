@@ -4,9 +4,11 @@ import * as Permissions from "expo-permissions";
 import { Camera } from "expo-camera";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import PriceAndReview from "../screens/PriceAndReview";
 import Reviews from "../components/Reviews";
+import { NavigationHelpersContext } from "@react-navigation/native";
 
-export default function BarcodeScannerScreen() {
+export default function BarcodeScannerScreen({route, navigation}) {
   const [hasPermission, setHasPermission] = useState(null);
   // const [type, setType] = useState(Camera.Constants.Type.back);
   const [scanned, setScanned] = useState(false);
@@ -15,16 +17,20 @@ export default function BarcodeScannerScreen() {
     (async () => {
       const { status } = await Camera.requestPermissionsAsync();
       setHasPermission(status === "granted");
-     
     })();
   }, []);
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-        alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-    console.log('data', data, eau)
+    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    set_eau(data);
+    console.log("data", data);
+   navigation.navigate("PriceAndReview", {eau: eau})
+
   };
-  
+  console.log("eau", eau);
+
+
 
   if (hasPermission === null) {
     return <View />;
@@ -41,7 +47,7 @@ export default function BarcodeScannerScreen() {
       {scanned && (
         <Button title={"Tap to Scan Again"} onPress={() => setScanned(false)} />
       )}
-      {/* <Reviews eau={data}/> */}
+      {/* <PriceAndReview eau={eau}/> */}
     </View>
   );
 }
