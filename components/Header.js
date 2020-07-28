@@ -6,20 +6,20 @@ import Icon  from "react-native-vector-icons/Feather";
 
 const styles = StyleSheet.create({
   header: {
-    padding: 20,
-    backgroundColor: "#f6546a",
-    alignItems: "stretch",
+    padding: 10,
+    backgroundColor: "#e40066",
     justifyContent: "center",
+    alignSelf: "stretch",
   },
 
 });
 
 export default function Header() {
   return (
-    <TouchableOpacity activeOpacity="0.2">
+    <TouchableOpacity activeOpacity={0.2} >
     <View style={styles.header}>
       <StatusBar style="light-content" />
-      <Icon name="menu" size={30} color="#fff" alignItems="flex-end"/>
+      <Icon name="menu" size={30} color="#fff" />
     </View>
     </TouchableOpacity>
 

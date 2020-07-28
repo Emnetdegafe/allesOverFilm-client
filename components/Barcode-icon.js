@@ -9,28 +9,28 @@ import {
   Pressable,
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import BarcodeReader from "../screens/BarcodeScanner";
-
+import {useNavigation} from "@react-navigation/native"
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 80,
+    paddingTop: 30,
     paddingLeft: 100,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
   scanner: {
+    paddingTop: 30,
+    paddingRight: 50,
     width: 66,
     height: 58,
   },
 });
 
-export default function Scanner() {
-  console.log("barcodescanner", barcodescanner);
+export default function BarcodeIcon({BarcodeScannerScreen}) {
+  const navigation = useNavigation()
   return (
     <TouchableOpacity>
       <View style={styles.container}>
-        <Icon name="barcode-scan" size={50} onPress={() => BarcodeReader} />
+        <Icon name="barcode-scan" size={60} onPress={() => navigation.navigate("BarCodeScanner")} />
       </View>
     </TouchableOpacity>
   );
