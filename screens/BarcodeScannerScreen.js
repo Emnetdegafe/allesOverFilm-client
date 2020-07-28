@@ -8,7 +8,7 @@ import PriceAndReview from "../screens/PriceAndReview";
 import Reviews from "../components/Reviews";
 import { NavigationHelpersContext } from "@react-navigation/native";
 
-export default function BarcodeScannerScreen({route, navigation}) {
+export default function BarcodeScannerScreen({ navigation }) {
   const [hasPermission, setHasPermission] = useState(null);
   // const [type, setType] = useState(Camera.Constants.Type.back);
   const [scanned, setScanned] = useState(false);
@@ -25,12 +25,10 @@ export default function BarcodeScannerScreen({route, navigation}) {
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
     set_eau(data);
     console.log("data", data);
-   navigation.navigate("PriceAndReview", {eau: eau})
+    navigation.navigate("PriceAndReview", { eau: data });
 
+    console.log("eau", data);
   };
-  console.log("eau", eau);
-
-
 
   if (hasPermission === null) {
     return <View />;

@@ -1,35 +1,35 @@
 import { StatusBar } from "expo-status-bar";
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
-import axios from 'axios'
+import axios from "axios";
 
-const baseUrl = "http://localhost:4000/films/prices";
+const priceUrl = "http://192.168.1.49:4000/films/price";
 
-export default function PriceAndReview(eau) {
+export default function PriceAndReview({ route, navigation }) {
   const [isLoading, setLoading] = useState(true);
-  // const [data, setData] = useState([]);
-// console.log('what is eau', eau)
+  const [price, set_price] = useState("");
 
-// const {eau} = route.params
-
+  console.log("prop", route.params.eau); // eau
   useEffect(() => {
-    console.log("what is prop", eau);
     try {
-      axios.get(`${baseUrl}/${eau}`).then((response) => {
-        setData(response.data);
+      const eau = parseInt(route.params.eau);
+      console.log("eau to send", eau);
+      axios.get(`${priceUrl}/${eau}`).then((response) => {
         setLoading(false);
+        set_price(response.data);
+        console.log("result", response.data);
       });
-      console.log("result", response.data);
     } catch (error) {
       console.log(error);
     }
   }, []);
 
   return (
-    <TouchableOpacity activeOpacity="0.2">
+    <TouchableOpacity activeOpacity={0.2}>
       <View style={styles.container}>
-        <StatusBar style="light-content" />
+        <Text> Amazon.nl: {price.eurosAmz}</Text>
+        <Text>Bol.com {price.bolPrice}</Text>
       </View>
     </TouchableOpacity>
   );

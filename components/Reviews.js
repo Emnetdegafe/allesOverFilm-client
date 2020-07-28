@@ -6,7 +6,9 @@ import {
   ActivityIndicator,
   FlatList,
   Text,
+  Image,
   View,
+  SectionList,
 } from "react-native";
 import Axios from "axios";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -19,17 +21,20 @@ export default function Reviews() {
 
   useEffect(() => {
     try {
+      let isMounted = true;
       Axios.get(baseUrl).then((response) => {
-        setData(response.data.films);
-        setLoading(false);
+        // console.log("response", response.data.films);
+        if (isMounted) {
+          setData(response.data.films);
+          setLoading(false);
+          console.log("response", response.data.films);
+        }
       });
-      console.log("result", response.data.films);
     } catch (error) {
       console.log(error);
     }
   }, []);
   // console.log(data);
-  // console.log("response", response);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -38,12 +43,13 @@ export default function Reviews() {
       ) : (
         <FlatList
           data={data}
+          style={{ width: "100%", flex: 1 }}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
-            <TouchableOpacity style={styles.filmBox} >
+            <TouchableOpacity style={styles.filmBox}>
               <Text style={styles.filmText}>{item.title}</Text>
               <Text>{item.year}</Text>
-              {/* <Image source={item.image} /> */}
+              <Image style={styles.image} source={{ uri: item.image }} />
             </TouchableOpacity>
           )}
         />
@@ -51,21 +57,23 @@ export default function Reviews() {
     </SafeAreaView>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
+    // flexDirection: "column",
     justifyContent: "center",
-    marginTop: 48,
-    marginLeft: 20,
+    marginTop: 20,
+    marginLeft: 10,
   },
   filmBox: {
     paddingBottom: 5,
     marginHorizontal: 40,
     marginVertical: 30,
-    // borderStyle: "solid",
+    borderStyle: "solid",
     borderWidth: 1,
     borderColor: "black",
+    flex: 1,
   },
   filmText: {
     fontSize: 20,
@@ -74,4 +82,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
   },
+  image: {
+    width: 3
+  }
 });

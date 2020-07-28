@@ -7,7 +7,6 @@ import BarcodeIcon from "../components/Barcode-icon";
 import Reviews from "../components/Reviews";
 
 export default function HomeScreen() {
-
   return (
     <View style={styles.container}>
       <View style={styles.logoAndScanner}>
@@ -16,11 +15,9 @@ export default function HomeScreen() {
       </View>
       <View style={styles.header}>
         <Header />
-        <View>
-          {/* <Search /> */}
-        </View>
-        <View>
-        <Reviews />
+        <View>{/* <Search /> */}</View>
+        <View style={{ flex: 1 }}>
+          <Reviews />
         </View>
       </View>
     </View>
@@ -29,13 +26,15 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     justifyContent: "space-between",
+    flex: 1,
   },
   logoAndScanner: {
     flexDirection: "row",
     justifyContent: "space-evenly",
   },
   header: {
-    paddingTop: 10,
+    paddingTop: 8,
+    flex: 1,
   },
   input: {
     paddingTop: 5,
