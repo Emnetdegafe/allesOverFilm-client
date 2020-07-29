@@ -28,8 +28,20 @@ export default function PriceAndReview({ route, navigation }) {
   return (
     <TouchableOpacity activeOpacity={0.2}>
       <View style={styles.container}>
-        <Text> Amazon.nl: {price.eurosAmz}</Text>
-        <Text>Bol.com {price.bolPrice}</Text>
+        <Text style={styles.title}>
+          <Text>{price.AmzTitle}</Text>
+        </Text>
+        <View>
+          <Image style={styles.image} source={{ uri: price.BolPic }} />
+        </View>
+        <View>
+          <Text>
+            <Text> Amazon.nl: {price.AmzPrice}</Text>
+          </Text>
+          <Text>
+            <Text>Bol.com {price.BolPrice}</Text>
+          </Text>
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -37,12 +49,25 @@ export default function PriceAndReview({ route, navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: "blue",
-    borderWidth: 1,
+    flex: 1,
+    flexDirection: "column",
+    marginHorizontal: 30,
+    marginVertical: 40,
+    alignContent: "center"
   },
   filmBox: {
+    flex: 1,
     backgroundColor: "#f6546a",
-    alignItems: "stretch",
     justifyContent: "center",
+  },
+  image: {
+    width: 250,
+    height: 300,
+    // alignItems: "center",
+    paddingBottom: 10,
+    marginTop: 10,
+  },
+  title: {
+    fontSize: 30,
   },
 });

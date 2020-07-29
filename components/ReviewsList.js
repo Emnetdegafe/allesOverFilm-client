@@ -8,16 +8,21 @@ import {
   Text,
   Image,
   View,
-  SectionList,
+  Button,
 } from "react-native";
 import Axios from "axios";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { useNavigation } from "@react-navigation/native";
 
 const baseUrl = "http://192.168.1.49:4000/films";
 
-export default function Reviews() {
+export default function ReviewsList({ ReviewDetail }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [id, setId] = useState("");
+
+  const navigation = useNavigation();
 
   useEffect(() => {
     try {
@@ -28,6 +33,7 @@ export default function Reviews() {
           setData(response.data.films);
           setLoading(false);
           console.log("response", response.data.films);
+          // console.log('íd', data.id)
         }
       });
     } catch (error) {
@@ -47,9 +53,24 @@ export default function Reviews() {
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
             <TouchableOpacity style={styles.filmBox}>
-              <Text style={styles.filmText}>{item.title}</Text>
-              <Text>{item.year}</Text>
+              <View>
+                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.filmText}>Released in {item.year}</Text>
+              </View>
               <Image style={styles.image} source={{ uri: item.image }} />
+              <View>
+                {/* <Icon name="hexagon" size={60} color="white"/> */}
+                <Text>Rating: {item.reviews[0].rating}</Text>
+              </View>
+              <View style={styles.button}>
+                <Button 
+                  title="view Detail"
+                  color="#e40066"
+                  onPress={() =>
+                    navigation.navigate("ReviewDetail", { id: item.id })
+                  }
+                />
+              </View>
             </TouchableOpacity>
           )}
         />
@@ -61,28 +82,38 @@ export default function Reviews() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // flexDirection: "column",
+    flexDirection: "column",
     justifyContent: "center",
-    marginTop: 20,
-    marginLeft: 10,
+    marginTop: 10,
+    marginLeft: 5,
   },
   filmBox: {
     paddingBottom: 5,
     marginHorizontal: 40,
-    marginVertical: 30,
+    marginVertical: 10,
     borderStyle: "solid",
     borderWidth: 1,
     borderColor: "black",
     flex: 1,
+    paddingLeft: 15,
+    justifyContent: "center",
+    alignItems: "center",
   },
   filmText: {
     fontSize: 20,
     fontWeight: "200",
+    alignItems: "center",
+
+    
   },
   title: {
-    fontSize: 32,
+    fontSize: 30,
   },
   image: {
-    width: 3
+    width: 120,
+    height: 150,
+  },
+  button: {
+    padding: 10
   }
 });

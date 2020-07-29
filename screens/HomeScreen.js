@@ -4,7 +4,7 @@ import Logo from "../components/logo";
 import Header from "../components/Header";
 import Search from "../components/search";
 import BarcodeIcon from "../components/Barcode-icon";
-import Reviews from "../components/Reviews";
+import Reviews from "../components/ReviewsList";
 
 export default function HomeScreen() {
   return (

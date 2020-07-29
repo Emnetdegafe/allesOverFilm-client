@@ -5,7 +5,7 @@ import { Camera } from "expo-camera";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import PriceAndReview from "../screens/PriceAndReview";
-import Reviews from "../components/Reviews";
+import Reviews from "../components/ReviewsList";
 import { NavigationHelpersContext } from "@react-navigation/native";
 
 export default function BarcodeScannerScreen({ navigation }) {
