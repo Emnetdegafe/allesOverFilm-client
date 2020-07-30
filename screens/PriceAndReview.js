@@ -1,6 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Button,
+} from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import axios from "axios";
 
@@ -26,22 +33,29 @@ export default function PriceAndReview({ route, navigation }) {
   }, []);
 
   return (
-    <TouchableOpacity activeOpacity={0.2}>
-      <View style={styles.container}>
-        <Text style={styles.title}>
-          <Text>{price.AmzTitle}</Text>
-        </Text>
+    <TouchableOpacity activeOpacity={0.2} style={styles.container}>
+      <Text style={styles.title}>
+        <Text>{price.AmzTitle}</Text>
+      </Text>
+      <View>
+        <Image style={styles.image} source={{ uri: price.BolPic }} />
+      </View>
+      <View style={styles.filmBox}>
         <View>
-          <Image style={styles.image} source={{ uri: price.BolPic }} />
+          <Text style={styles.amzPrice}> Amazon.nl: {price.AmzPrice}</Text>
         </View>
         <View>
-          <Text>
-            <Text> Amazon.nl: {price.AmzPrice}</Text>
-          </Text>
-          <Text>
-            <Text>Bol.com {price.BolPrice}</Text>
-          </Text>
+          <Text style={styles.bolPrice}>Bol.com: {price.BolPrice}</Text>
         </View>
+      </View>
+
+      <StatusBar style="light" />
+      <View style={styles.button}>
+        <Button
+          title="Read Review"
+          color="#e40066"
+          onPress={() => navigation.navigate("Home")}
+        />
       </View>
     </TouchableOpacity>
   );
@@ -51,23 +65,51 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    marginHorizontal: 30,
-    marginVertical: 40,
-    alignContent: "center"
+    justifyContent: "space-between",
+    margin: 15,
+    marginTop: 5,
+    paddingTop: 5,
+    padding: 10,
+    alignItems: "center",
   },
   filmBox: {
     flex: 1,
-    backgroundColor: "#f6546a",
-    justifyContent: "center",
+    paddingBottom: 5,
+    flexDirection: "row",
+    marginVertical: 50,
+    padding: 15,
+    justifyContent: "space-evenly",
   },
   image: {
-    width: 250,
-    height: 300,
-    // alignItems: "center",
+    width: 150,
+    height: 200,
     paddingBottom: 10,
     marginTop: 10,
   },
+  amzPrice: {
+    paddingRight: 20,
+    borderWidth: 1,
+    borderRadius: 30,
+    backgroundColor: "#000000",
+    color: "#ffffff",
+    padding: 15,
+  },
+
+  bolPrice: {
+    paddingLeft: 20,
+    borderWidth: 1,
+    borderRadius: 30,
+    borderColor: "#000000",
+    backgroundColor: "#000000",
+    color: "#ffffff",
+    padding: 15,
+    marginLeft: 25,
+  },
   title: {
     fontSize: 30,
+  },
+  button: {
+    padding: 30,
+    borderRadius: 10,
   },
 });
