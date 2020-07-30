@@ -9,6 +9,7 @@ import {
   Image,
   View,
   Button,
+  ImageBackground,
 } from "react-native";
 import Axios from "axios";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -58,12 +59,19 @@ export default function ReviewsList({ ReviewDetail }) {
                 <Text style={styles.filmText}>Released in {item.year}</Text>
               </View>
               <Image style={styles.image} source={{ uri: item.image }} />
-              <View>
-                {/* <Icon name="hexagon" size={60} color="white"/> */}
-                <Text>Rating: {item.reviews[0].rating}</Text>
+
+              <Text>Rating</Text>
+              <View style={{ flex: 1, flexDirection: "column" }}>
+                <ImageBackground
+                  source={require("../images/hexagon.png")}
+                  style={styles.imageBackground}
+                  // tintColor="#00000"
+                >
+                  <Text> {item.reviews[0].rating}</Text>
+                </ImageBackground>
               </View>
               <View style={styles.button}>
-                <Button 
+                <Button
                   title="view Detail"
                   color="#e40066"
                   onPress={() =>
@@ -103,8 +111,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "200",
     alignItems: "center",
-
-    
   },
   title: {
     fontSize: 30,
@@ -113,7 +119,15 @@ const styles = StyleSheet.create({
     width: 120,
     height: 150,
   },
+  imageBackground: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
+    width: 40,
+    height: 40,
+    alignItems: "center",
+  },
   button: {
-    padding: 10
-  }
+    padding: 10,
+  },
 });
