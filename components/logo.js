@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 30,
+    paddingTop: 15,
     paddingRight: 50,
     // backgroundColor: "#fff",
     alignItems: "center",
@@ -21,10 +21,10 @@ const styles = StyleSheet.create({
 
 export default function Logo() {
   return (
-    <TouchableOpacity activeOpacity={0.2} >
-    <View style={styles.container}>
-      <Image style={styles.logo} source={require("../images/logo.png")} />
-    </View>
+    <TouchableOpacity activeOpacity={0.2}>
+      <View style={styles.container}>
+        <Image style={styles.logo} source={require("../images/logo.png")} />
+      </View>
     </TouchableOpacity>
   );
 }
