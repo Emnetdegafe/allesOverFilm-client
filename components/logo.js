@@ -1,12 +1,19 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
 
+export default function Logo() {
+  return (
+    <TouchableOpacity activeOpacity={0.2}>
+      <View style={styles.container}>
+        <Image style={styles.logo} source={require("../images/logo.png")} />
+      </View>
+    </TouchableOpacity>
+  );
+}
 const styles = StyleSheet.create({
   container: {
     paddingTop: 15,
     paddingRight: 50,
-    // backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -18,13 +25,3 @@ const styles = StyleSheet.create({
     height: 50,
   },
 });
-
-export default function Logo() {
-  return (
-    <TouchableOpacity activeOpacity={0.2}>
-      <View style={styles.container}>
-        <Image style={styles.logo} source={require("../images/logo.png")} />
-      </View>
-    </TouchableOpacity>
-  );
-}

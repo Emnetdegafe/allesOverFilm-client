@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
@@ -13,7 +12,6 @@ import {
 } from "react-native";
 import Axios from "axios";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { useNavigation } from "@react-navigation/native";
 
 const baseUrl = "http://192.168.1.49:4000/films";
@@ -29,7 +27,6 @@ export default function ReviewsList({ ReviewDetail }) {
     try {
       let isMounted = true;
       Axios.get(baseUrl).then((response) => {
-        // console.log("response", response.data.films);
         if (isMounted) {
           setData(response.data.films);
           setLoading(false);

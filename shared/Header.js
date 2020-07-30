@@ -1,10 +1,7 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import { useNavigation } from "@react-navigation/native";
-
-
 
 
 export default function Header() {
@@ -27,7 +24,6 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "#e40066",
     alignSelf: "stretch",
-      // paddingTop: 8,
-      // flex: 1,
+
   },
 });

@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   Button,
 } from "react-native";
-import Icon from "react-native-vector-icons/Feather";
 import axios from "axios";
 
 const priceUrl = "http://192.168.1.49:4000/films/price";

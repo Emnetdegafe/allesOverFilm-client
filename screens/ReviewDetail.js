@@ -4,15 +4,12 @@ import {
   StyleSheet,
   SafeAreaView,
   ActivityIndicator,
-  FlatList,
   Text,
   Image,
   View,
-  Modal,
 } from "react-native";
 import Axios from "axios";
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const baseUrl = "http://192.168.1.49:4000/films";
 
@@ -86,7 +83,6 @@ const styles = StyleSheet.create({
   },
   filmBox: {
     padding: 5,
-
     alignItems: "center",
   },
   filmText: {
@@ -99,7 +95,6 @@ const styles = StyleSheet.create({
   image: {
     width: 250,
     height: 300,
-    // alignItems: "center",
     paddingBottom: 10,
     marginTop: 10,
   },
