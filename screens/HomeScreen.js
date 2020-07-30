@@ -1,10 +1,11 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import Logo from "../components/logo";
-import Header from "../components/Header";
-import Search from "../components/search";
+import Header from "../shared/Header";
+
 import BarcodeIcon from "../components/Barcode-icon";
-import Reviews from "../components/Reviews";
+import Reviews from "../components/ReviewsList";
+import { StatusBar } from "expo-status-bar";
 
 export default function HomeScreen() {
   return (
@@ -19,6 +20,7 @@ export default function HomeScreen() {
         <View style={{ flex: 1 }}>
           <Reviews />
         </View>
+        <StatusBar style="light" />
       </View>
     </View>
   );

@@ -1,18 +1,27 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  Pressable,
-} from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import {useNavigation} from "@react-navigation/native"
+import { useNavigation } from "@react-navigation/native";
+
+
+export default function BarcodeIcon({ BarcodeScannerScreen }) {
+  const navigation = useNavigation();
+  return (
+    <TouchableOpacity>
+      <View style={styles.container}>
+        <Icon
+          name="barcode-scan"
+          size={60}
+          onPress={() => navigation.navigate("BarCodeScanner")}
+        />
+      </View>
+    </TouchableOpacity>
+  );
+}
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 30,
+    paddingTop: 15,
     paddingLeft: 100,
     alignItems: "center",
     justifyContent: "center",
@@ -24,14 +33,3 @@ const styles = StyleSheet.create({
     height: 58,
   },
 });
-
-export default function BarcodeIcon({BarcodeScannerScreen}) {
-  const navigation = useNavigation()
-  return (
-    <TouchableOpacity>
-      <View style={styles.container}>
-        <Icon name="barcode-scan" size={60} onPress={() => navigation.navigate("BarCodeScanner")} />
-      </View>
-    </TouchableOpacity>
-  );
-}
