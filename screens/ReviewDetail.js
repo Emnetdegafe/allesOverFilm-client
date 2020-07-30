@@ -65,6 +65,7 @@ export default function ReviewDetail(props) {
                 Summary: {film.reviews[0].summary}
               </Text>
             </View>
+            <StatusBar style="light" />
           </TouchableOpacity>
         </ScrollView>
       )}
@@ -85,9 +86,7 @@ const styles = StyleSheet.create({
   },
   filmBox: {
     padding: 5,
-    // marginHorizontal: 40,
-    // marginVertical: 70,
-    // flex: 1,
+
     alignItems: "center",
   },
   filmText: {
