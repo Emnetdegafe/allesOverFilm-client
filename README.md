@@ -25,10 +25,10 @@ The project is a mobile app made using React Native for a Dutch film review webs
 - don't forget to run the backend so you can see the reviews and fetch prices
 
 
-Wireframe link: https://wireframepro.mockflow.com/view/Md2d08ab918f422cca921b71e9b4819201595324219253#/page/755fbc03bf244d50a6bc91b5da42b9e7
-Project Backlog Board link: https://github.com/users/Emnetdegafe/projects/1
-Frontend Repository link: https://github.com/Emnetdegafe/allesOverFilm-client
-Backend Repo link: https://github.com/Emnetdegafe/allesOverFilm-backend
+[Wireframe](https://wireframepro.mockflow.com/view/Md2d08ab918f422cca921b71e9b4819201595324219253#/page/755fbc03bf244d50a6bc91b5da42b9e7)
+[Project Backlog Board](https://github.com/users/Emnetdegafe/projects/1)
+[Frontend Repository](https://github.com/Emnetdegafe/allesOverFilm-client)
+[Backend Repo link](https://github.com/Emnetdegafe/allesOverFilm-backend)
 
 
 # Frontend
@@ -39,8 +39,6 @@ Backend Repo link: https://github.com/Emnetdegafe/allesOverFilm-backend
 
 
 
-![HomeScreen screenshot](/home/emnet/Desktop/Screenshot_1596179614.png)
-![Review Detail](/home/emnet/Desktop/Screenshot_1596179600.png)
 
 
 
