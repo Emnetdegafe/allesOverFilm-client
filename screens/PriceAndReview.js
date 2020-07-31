@@ -34,7 +34,11 @@ export default function PriceAndReview({ route, navigation }) {
   return (
     <TouchableOpacity activeOpacity={0.2} style={styles.container}>
       <Text style={styles.title}>
-        <Text>{price.AmzTitle}</Text>
+        {price.AmzTitle ? (
+          <Text>{price.AmzTitle}</Text>
+        ) : (
+          <Text>{price.BolTitle}</Text>
+        )}
       </Text>
       <View>
         <Image style={styles.image} source={{ uri: price.BolPic }} />
@@ -42,18 +46,16 @@ export default function PriceAndReview({ route, navigation }) {
       <View style={styles.filmBox}>
         <View>
           {price.AmzPrice ? (
-            <Text style={styles.amzPrice}>Amazon: € {price.AmzPrice}{" "}</Text>
+            <Text style={styles.amzPrice}>Amazon: € {price.AmzPrice} </Text>
           ) : (
             <Text style={styles.amzPrice}>Not available at Amazon</Text>
           )}
         </View>
         <View>
-          {price.BolPrice? (
-
+          {price.BolPrice ? (
             <Text style={styles.bolPrice}>Bol.com: €{price.BolPrice}</Text>
-          ): (
+          ) : (
             <Text style={styles.bolPrice}>Not available at Bol</Text>
-
           )}
         </View>
       </View>
@@ -113,8 +115,7 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     padding: 15,
     marginLeft: 25,
-    alignItems:"center"
-
+    alignItems: "center",
   },
   title: {
     fontSize: 30,
