@@ -41,10 +41,20 @@ export default function PriceAndReview({ route, navigation }) {
       </View>
       <View style={styles.filmBox}>
         <View>
-          <Text style={styles.amzPrice}> Amazon.nl: {price.AmzPrice}</Text>
+          {price.AmzPrice ? (
+            <Text style={styles.amzPrice}>Amazon: € {price.AmzPrice}{" "}</Text>
+          ) : (
+            <Text style={styles.amzPrice}>Not available at Amazon</Text>
+          )}
         </View>
         <View>
-          <Text style={styles.bolPrice}>Bol.com: {price.BolPrice}</Text>
+          {price.BolPrice? (
+
+            <Text style={styles.bolPrice}>Bol.com: €{price.BolPrice}</Text>
+          ): (
+            <Text style={styles.bolPrice}>Not available at Bol</Text>
+
+          )}
         </View>
       </View>
 
@@ -91,7 +101,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     backgroundColor: "#000000",
     color: "#ffffff",
-    padding: 15,
+    padding: 25,
   },
 
   bolPrice: {
@@ -103,6 +113,8 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     padding: 15,
     marginLeft: 25,
+    alignItems:"center"
+
   },
   title: {
     fontSize: 30,
