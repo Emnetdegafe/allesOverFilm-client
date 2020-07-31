@@ -38,7 +38,7 @@ The project is a mobile app made using React Native for a Dutch film review webs
 - Components folder has the logo, BarcodeScanner Icon, and review list components, all these components are rendered in the HomeScreen and are Stack navigated.
 
 
-
+[HomeScreen](images/logo.png)
 
 
 
