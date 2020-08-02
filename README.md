@@ -25,23 +25,25 @@ The project is a mobile app made using React Native for a Dutch film review webs
 - don't forget to run the backend so you can see the reviews and fetch prices
 
 
-[Wireframe](https://wireframepro.mockflow.com/view/Md2d08ab918f422cca921b71e9b4819201595324219253#/page/755fbc03bf244d50a6bc91b5da42b9e7)
-[Project Backlog Board](https://github.com/users/Emnetdegafe/projects/1)
-[Frontend Repository](https://github.com/Emnetdegafe/allesOverFilm-client)
-[Backend Repo link](https://github.com/Emnetdegafe/allesOverFilm-backend)
-
-
 # Frontend
 - Screens folder contains the 4 screens, home, barcodescanner, reviewDetail, pricesAndReview(the screen after scanning the barcode) and About.
 - Router contains two stackNavigations(HomeStack and AboutStack) and DrowerNavigation file(see the image attached for further understanding of the app navigation)
 - Images used are located in the images folder, rating hexagon, logo, and others.
 - Components folder has the logo, BarcodeScanner Icon, and review list components, all these components are rendered in the HomeScreen and are Stack navigated.
 
-# Images/gifs
+# Essential links
 
-[AboutScreen](https://giphy.com/gifs/LP5tgmSetdO6HWN8NM)
-[HomeScreen](https://giphy.com/gifs/SA0FvChUGfjUXmjCdz)
-[ReviewDetail Screen](https://giphy.com/gifs/ll5uiR0GTGTGuot7YF)
+[Wireframe](images/wireframe/page_1.png)
+[Project Backlog Board](https://github.com/users/Emnetdegafe/projects/1)
+[Frontend Repository](https://github.com/Emnetdegafe/allesOverFilm-client)
+[Backend Repo link](https://github.com/Emnetdegafe/allesOverFilm-backend)
+
+# Gifs of app screens
+
+[AboutScreen](images/aboutScreen.gif)
+[HomeScreen](images/homeScreen.gif)
+[BarcodeScannerScreen](images/scanner.gif)
+[ReviewDetailScreen](images/reviewDetail.gif)
 
 
 
