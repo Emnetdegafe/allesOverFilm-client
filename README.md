@@ -13,7 +13,7 @@ In this project, I am expected to showcase how well I implemented the technics a
 
 # Description of the project
 
-The project is a mobile app made using React Native for a Dutch film review website, Alles Over Film. The app, for the time being, is developed for android with the hope of extending it to IOS.
+The project is a mobile app made using React Native for a Dutch film review website, Alles Over Film. The app, for the time being, is developed for android with the hope of extending it to IOS in the near future. 
 
 # Main features include:
 
@@ -21,14 +21,14 @@ The project is a mobile app made using React Native for a Dutch film review webs
 - Barcode scanner functionality that responds with prices of the requested DVD/Blu ray from two online stores(Bol.com and Amazon.nl).
 
 # Starting the app
-- The app is made with React-Native using expo so you need expo to try the app(either on your android phone or an Android Studio Emulator)
-- don't forget to run the backend so you can see the reviews and fetch prices
+- The app is made with React-Native using expo so you need Expo to try the app(either on your android phone or an Android Studio Emulator)
+- The server at #AllesOverFilm-backend should run in order to fetch prices and the rest of the data displayed on the app.
 
 
-# Frontend
+# This repository contains: 
 - Screens folder contains the 4 screens, home, barcodescanner, reviewDetail, pricesAndReview(the screen after scanning the barcode) and About.
-- Router contains two stackNavigations(HomeStack and AboutStack) and DrowerNavigation file(see the image attached for further understanding of the app navigation)
-- Images used are located in the images folder, rating hexagon, logo, and others.
+- Router Folder contains two stackNavigations(HomeStack and AboutStack) and DrowerNavigation file(see the image attached for further understanding of the app navigation)
+- Images folder containes all the images used in the app as well as Gifs of the app screens. 
 - Components folder has the logo, BarcodeScanner Icon, and review list components, all these components are rendered in the HomeScreen and are Stack navigated.
 
 # Essential links
