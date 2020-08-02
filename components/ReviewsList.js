@@ -50,15 +50,17 @@ export default function ReviewsList({ ReviewDetail }) {
           style={{ width: "100%", flex: 1 }}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
-            <TouchableOpacity style={styles.filmBox}>
+            <TouchableOpacity style={styles.card}>
               <View>
                 <Text style={styles.title}>{item.title}</Text>
-                <Text style={styles.filmText}>Released in {item.year}</Text>
+                <Text style={styles.filmText}>Year: {item.year}</Text>
               </View>
-              <Image style={styles.image} source={{ uri: item.image }} />
+              <View style={styles.coverCard}>
+                <Image style={styles.image} source={{ uri: item.image }} />
+              </View>
 
-              <Text>Rating</Text>
               <View style={{ flex: 1, flexDirection: "column" }}>
+              <Text>Rating</Text>
                 <ImageBackground
                   source={require("../images/hexagon.png")}
                   style={styles.imageBackground}
@@ -92,25 +94,31 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 5,
   },
-  filmBox: {
+  card: {
     paddingBottom: 5,
     marginHorizontal: 40,
     marginVertical: 10,
     borderStyle: "solid",
-    borderWidth: 1,
     borderColor: "black",
+    borderRadius: 15,
     flex: 1,
     paddingLeft: 15,
     justifyContent: "center",
     alignItems: "center",
+    elevation: 5,
+    textAlign: "center"
   },
   filmText: {
     fontSize: 20,
     fontWeight: "200",
-    alignItems: "center",
+    textAlign: "center",
   },
   title: {
-    fontSize: 30,
+    paddingTop: 15,
+    fontSize: 28,
+  },
+  coverCard: {
+    elevation: 5,
   },
   image: {
     width: 120,
@@ -123,6 +131,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     alignItems: "center",
+    elevation: 5,
   },
   button: {
     padding: 10,

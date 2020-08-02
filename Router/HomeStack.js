@@ -4,10 +4,11 @@ import BarcodeScannerScreen from "../screens/BarcodeScannerScreen";
 import HomeScreen from "../screens/HomeScreen";
 import PriceAndReview from "../screens/PriceAndReview";
 import ReviewDetail from "../screens/ReviewDetail";
+import { HeaderBackButton } from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
 
-export default function HomeStack() {
+export default function HomeStack({ navigation }) {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -27,6 +28,13 @@ export default function HomeStack() {
         name="ReviewDetail"
         component={ReviewDetail}
         options={{
+          headerLeft: (props) => (
+            <HeaderBackButton
+              {...props}
+              onPress={() => navigation.goBack()}
+              tintColor="#ffffff"
+            />
+          ),
           title: "Alles Over Film",
           headerStyle: { backgroundColor: "#000000" },
           headerTitleStyle: {
@@ -39,6 +47,14 @@ export default function HomeStack() {
         name="BarCodeScanner"
         component={BarcodeScannerScreen}
         options={{
+          headerLeft: () => (
+            <HeaderBackButton
+              onPress={() => {
+                navigation.goBack();
+              }}
+              tintColor="#ffffff"
+            />
+          ),
           title: "Alles Over Film",
           headerStyle: { backgroundColor: "#000000" },
 
@@ -52,6 +68,14 @@ export default function HomeStack() {
         name="PriceAndReview"
         component={PriceAndReview}
         options={{
+          headerLeft: () => (
+            <HeaderBackButton
+              onPress={() => {
+                navigation.goBack();
+              }}
+              tintColor="#ffffff"
+            />
+          ),
           title: "Alles Over Film",
           headerStyle: { backgroundColor: "#000000" },
           headerTitleStyle: {

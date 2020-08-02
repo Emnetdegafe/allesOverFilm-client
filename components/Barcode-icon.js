@@ -12,7 +12,7 @@ export default function BarcodeIcon({ BarcodeScannerScreen }) {
       <View style={styles.container}>
         <Icon
           name="barcode-scan"
-          size={60}
+          size={70}
           onPress={() => navigation.navigate("BarCodeScanner")}
         />
       </View>
@@ -25,6 +25,15 @@ const styles = StyleSheet.create({
     paddingLeft: 100,
     alignItems: "center",
     justifyContent: "center",
+    elevation:5,
+//     shadowColor: "#000",
+// shadowOffset: {
+// 	width: 0,
+// 	height: 2,
+// },
+// shadowOpacity: 0.25,
+// shadowRadius: 3.84,
+    
   },
   scanner: {
     paddingTop: 30,

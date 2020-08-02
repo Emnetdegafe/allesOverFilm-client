@@ -7,7 +7,7 @@ import BarcodeIcon from "../components/Barcode-icon";
 import Reviews from "../components/ReviewsList";
 import { StatusBar } from "expo-status-bar";
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.logoAndScanner}>

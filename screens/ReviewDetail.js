@@ -47,7 +47,7 @@ export default function ReviewDetail(props) {
             <Text style={styles.title}>
               <Text>{film.title}</Text>
             </Text>
-            <View>
+            <View style={styles.imageCard}>
               <Image style={styles.image} source={{ uri: film.image }} />
             </View>
             <Text>
@@ -92,10 +92,18 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
   },
+  imageCard: {
+    elevation: 5,
+    borderRadius: 10,
+
+
+  },
   image: {
     width: 250,
     height: 300,
     paddingBottom: 10,
     marginTop: 10,
+    borderRadius: 10,
+
   },
 });

@@ -18,7 +18,7 @@ export default function AboutStack() {
           headerTitleStyle: {
             textAlign: "center",
             color: "#ffffff"
-          },
+          }, 
         }}
       />
     </Stack.Navigator>
