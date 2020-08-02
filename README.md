@@ -37,8 +37,11 @@ The project is a mobile app made using React Native for a Dutch film review webs
 - Images used are located in the images folder, rating hexagon, logo, and others.
 - Components folder has the logo, BarcodeScanner Icon, and review list components, all these components are rendered in the HomeScreen and are Stack navigated.
 
+# Images/gifs
 
-[HomeScreen](images/logo.png)
+[AboutScreen](https://giphy.com/gifs/LP5tgmSetdO6HWN8NM)
+[HomeScreen](https://giphy.com/gifs/SA0FvChUGfjUXmjCdz)
+[ReviewDetail Screen](https://giphy.com/gifs/ll5uiR0GTGTGuot7YF)
 
 
 
