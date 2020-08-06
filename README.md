@@ -2,9 +2,9 @@
 
 **Alles Over Film** is an individual portfolio project I made after taking a 9 weeks long web development course at Codaussure. The project is a mobile phone app for [Alles Over Film](https://allesoverfilm.nl/), a dutch film review website. 
 
-The idea of making a mobile app came from the owner of the review website. The owner, as a film collector himself, wanted a mobile app that has the functionality of scanning a BLU RAY/DVD/UHD barcode when he is at shops so he can compare prices with online stores such as Bol.com and Amazon. So the app is made to offer this functunality for users -- so this the main use story I tried to answer developing this app.
+The idea of making a mobile app came from the owner of the review website. The owner, as a film collector himself, wanted a mobile app that has the functionality of scanning a BLU RAY/DVD/UHD barcode when he is at shops so he can compare prices with online stores such as Bol.com and Amazon. So the app is made to offer this functunality for users -- so this the main user story I tried to answer developing this app.
 
-In this project, I am expected to showcase how well I implemented the technics and the tools I learned in the duration of the course. The main learning goals in making this project is using the skills I learned in building a well functioning Backend that can respond to requests from the frontend as well as an app that can provide the functionalities that respond to the user stories.
+In this project, I was expected to showcase how well I implemented the technics and the tools I learned in the duration of the course. The main learning goals in making this project is using the skills I learned in building a well functioning Backend that can respond to requests from the frontend as well as an app that can provide the functionalities that respond to the user stories.
      # specific learning goals:
       - Write clean and clear code
       - structure data and tools well
