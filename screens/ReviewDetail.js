@@ -38,7 +38,7 @@ export default function ReviewDetail(props) {
     }
   }, []);
   // console.log(data);
-  const url = "https://allesoverfilm.nl/recensies/";
+  const url = `https://allesoverfilm.nl/recensies/${film.reviewCode}`;
 
   const handlePress = async () => {
     await Linking.openURL(url);
