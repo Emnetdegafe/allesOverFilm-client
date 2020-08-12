@@ -7,6 +7,8 @@ import {
   Text,
   Image,
   View,
+  Button,
+  Linking,
 } from "react-native";
 import Axios from "axios";
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
@@ -36,6 +38,11 @@ export default function ReviewDetail(props) {
     }
   }, []);
   // console.log(data);
+  const url = "https://allesoverfilm.nl/recensies/";
+
+  const handlePress = async () => {
+    await Linking.openURL(url);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -63,6 +70,7 @@ export default function ReviewDetail(props) {
               </Text>
             </View>
             <StatusBar style="light" />
+            <Button title="Read Review" color="#e40066" onPress={handlePress} />
           </TouchableOpacity>
         </ScrollView>
       )}
@@ -95,8 +103,6 @@ const styles = StyleSheet.create({
   imageCard: {
     elevation: 5,
     borderRadius: 10,
-
-
   },
   image: {
     width: 250,
@@ -104,6 +110,5 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     marginTop: 10,
     borderRadius: 10,
-
   },
 });
