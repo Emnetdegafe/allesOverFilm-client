@@ -45,7 +45,7 @@ The project is a mobile app made using React Native for a Dutch film review webs
 ![AboutScreen](https://github.com/Emnetdegafe/allesOverFilm-client/blob/development/images/aboutScreen.gif)
 ![HomeScreen](https://github.com/Emnetdegafe/allesOverFilm-client/blob/development/images/homeScreen.gif)
 ![BarcodeScannerScreen](https://github.com/Emnetdegafe/allesOverFilm-client/blob/development/images/scanner.gif)
-![ReviewDetailScreen](https://github.com/Emnetdegafe/allesOverFilm-client/blob/development/images/revidewDetail.gif)
+![ReviewDetailScreen](https://github.com/Emnetdegafe/allesOverFilm-client/blob/development/images/reviewDetail.gif)
 
 
 
