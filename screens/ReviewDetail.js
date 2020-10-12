@@ -13,7 +13,7 @@ import {
 import Axios from "axios";
 import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 
-const baseUrl = "http://192.168.1.49:4000/films";
+const baseUrl = "https://alles-over-film.herokuapp.com/films";
 
 export default function ReviewDetail(props) {
   const [isLoading, setLoading] = useState(true);

@@ -14,7 +14,8 @@ import Axios from "axios";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
-const baseUrl = "http://192.168.1.49:4000/films";
+// const baseUrl = "http://192.168.1.49:4000/films";
+const baseUrl = "https://alles-over-film.herokuapp.com/films";
 
 export default function ReviewsList({ ReviewDetail }) {
   const [isLoading, setLoading] = useState(true);
@@ -60,7 +61,7 @@ export default function ReviewsList({ ReviewDetail }) {
               </View>
 
               <View style={{ flex: 1, flexDirection: "column" }}>
-              <Text>Rating</Text>
+                <Text>Rating</Text>
                 <ImageBackground
                   source={require("../images/hexagon.png")}
                   style={styles.imageBackground}
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     elevation: 5,
-    textAlign: "center"
+    textAlign: "center",
   },
   filmText: {
     fontSize: 20,

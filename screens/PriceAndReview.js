@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import axios from "axios";
 
-const priceUrl = "http://192.168.1.49:4000/films/price";
+const priceUrl = "https://alles-over-film.herokuapp.com/films/price";
 
 export default function PriceAndReview({ route, navigation }) {
   const [isLoading, setLoading] = useState(true);
