@@ -20,7 +20,6 @@ export default function ReviewDetail(props) {
   const [film, setFilm] = useState([]);
 
   const id = parseInt(props.route.params.id);
-  console.log("item?", props.route.params.id);
 
   useEffect(() => {
     try {
@@ -30,14 +29,13 @@ export default function ReviewDetail(props) {
         if (isMounted) {
           setFilm(response.data.film);
           setLoading(false);
-          console.log("response", response.data.film);
+          // console.log("response", response.data.film);
         }
       });
     } catch (error) {
       console.log(error);
     }
   }, []);
-  // console.log(data);
   const url = `https://allesoverfilm.nl/recensies/${film.reviewCode}`;
 
   const handlePress = async () => {

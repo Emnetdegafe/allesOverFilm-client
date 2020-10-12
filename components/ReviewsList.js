@@ -14,7 +14,6 @@ import Axios from "axios";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
-// const baseUrl = "http://192.168.1.49:4000/films";
 const baseUrl = "https://alles-over-film.herokuapp.com/films";
 
 export default function ReviewsList({ ReviewDetail }) {
@@ -31,15 +30,13 @@ export default function ReviewsList({ ReviewDetail }) {
         if (isMounted) {
           setData(response.data.films);
           setLoading(false);
-          console.log("response", response.data.films);
-          // console.log('íd', data.id)
+          // console.log("response", response.data.films);
         }
       });
     } catch (error) {
       console.log(error);
     }
   }, []);
-  // console.log(data);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -65,7 +62,6 @@ export default function ReviewsList({ ReviewDetail }) {
                 <ImageBackground
                   source={require("../images/hexagon.png")}
                   style={styles.imageBackground}
-                  // tintColor="#00000"
                 >
                   <Text> {item.reviews[0].rating}</Text>
                 </ImageBackground>

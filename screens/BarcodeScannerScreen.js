@@ -10,9 +10,8 @@ export default function BarcodeScannerScreen({ navigation }) {
   const [ean, set_ean] = useState("");
   useEffect(() => {
     (async () => {
-      console.log("status", status);
+      // console.log("status", status);
       const {status} = await Permissions.askAsync(Permissions.CAMERA);
-      console.log("1", status)
       setHasPermission(status === "granted");
     })();
   }, []);
@@ -21,10 +20,8 @@ export default function BarcodeScannerScreen({ navigation }) {
     setScanned(true);
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
     set_ean(data);
-    console.log("data", data);
     navigation.navigate("PriceAndReview", { ean: data });
 
-    console.log("ean", data);
   };
 
   if (hasPermission === null) {
