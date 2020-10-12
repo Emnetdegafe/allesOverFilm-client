@@ -17,12 +17,12 @@ export default function PriceAndReview({ route, navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [price, set_price] = useState("");
 
-  console.log("prop", route.params.eau); // eau
+  console.log("prop", route.params.ean); // ean
   useEffect(() => {
     try {
-      const eau = parseInt(route.params.eau);
-      console.log("eau to send", eau);
-      axios.get(`${priceUrl}/${eau}`).then((response) => {
+      const ean = parseInt(route.params.ean);
+      console.log("ean to send", ean);
+      axios.get(`${priceUrl}/${ean}`).then((response) => {
         setLoading(false);
         set_price(response.data);
         console.log("result", response.data);

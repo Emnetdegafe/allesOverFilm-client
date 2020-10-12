@@ -7,7 +7,7 @@ import * as Permissions from "expo-permissions";
 export default function BarcodeScannerScreen({ navigation }) {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
-  const [eau, set_eau] = useState("");
+  const [ean, set_ean] = useState("");
   useEffect(() => {
     (async () => {
       console.log("status", status);
@@ -20,11 +20,11 @@ export default function BarcodeScannerScreen({ navigation }) {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-    set_eau(data);
+    set_ean(data);
     console.log("data", data);
-    navigation.navigate("PriceAndReview", { eau: data });
+    navigation.navigate("PriceAndReview", { ean: data });
 
-    console.log("eau", data);
+    console.log("ean", data);
   };
 
   if (hasPermission === null) {
